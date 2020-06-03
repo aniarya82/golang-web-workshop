@@ -1,0 +1,7 @@
+runtime: go111
+handlers:
+  - url: /hello
+    static_files: hello.html
+    upload: hello.html
+#   - url: /api/
+#     script: auto

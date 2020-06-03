@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
+    <script src="/script.js"></script>
+    <link
+      href="http://fonts.googleapis.com/css?family=Roboto:400,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <h1>Events</h1>
+    <div class="content" ng-controller="EventsCtrl">
+      <div>
+        <div ng-repeat="e in events" class="event">
+          <span class="title">{{e.title}}</span>
+          <p class="header">
+            <span class="weather">{{e.weather}}</span> in
+            <span class="location">{{e.location}}</span>
+          </p>
+          <span class="date">{{e.date}}</span>
+          <p class="description">{{e.description}}&nbsp;</p>
+        </div>
+      </div>
+
+      <form>
+        <input type="text" placeholder="title" ng-model="newEvent.title" />
+        <input type="date" ng-model="newEvent.date" />
+        <input
+          type="text"
+          placeholder="location"
+          ng-model="newEvent.location"
+        />
+        <textarea
+          placeholder="description"
+          ng-model="newEvent.description"
+        ></textarea>
+        <button ng-click="addEvent()">New Event</button>
+      </form>
+    </div>
+  </body>
+</html>
